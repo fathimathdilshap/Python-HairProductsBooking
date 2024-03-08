@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary hero-header mb-5">
+        <div class="container text-center">
+            <h1 class="display-4 text-white mb-3 animated slideInDown">{{how2.title}}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">{{how2.job_title}}</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">{{how2.Description}}</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">{{how2.Description2}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- Feature Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row g-4">{% for x in features %}
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="feature-item position-relative bg-primary text-center p-3">
+                        <div class="border py-5 px-3">
+                            <i class="{{x.job_title}}"></i>
+                            <h5 class="text-white mb-0">{{x.title}}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+
+    <!-- How To Use Start -->
+    <div class="container-fluid how-to-use bg-primary my-5 py-5">
+        <div class="container text-white py-5">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 class="text-white mb-3"><span class="fw-light text-dark">{{how.title}}</span> {{how.job_title}}
+                    <span class="fw-light text-dark">{{how.Description}}</span></h1>
+                <p class="mb-5">{{how.Description2}}</p>
+            </div>
+
+            <div class="row g-5">{% for x in how1 %}
+                <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <div class="btn-square rounded-circle border mx-auto mb-4" style="width: 120px; height: 120px;">
+                        <i class="fa fa-home fa-3x text-dark"></i>
+                    </div>
+                    <h5 class="text-white">{{x.title}}</h5>
+                    <hr class="w-25 bg-light my-2 mx-auto">
+                    <span>{{x.job_title}}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- How To Use End -->
+
+
+    {% endblock %}
